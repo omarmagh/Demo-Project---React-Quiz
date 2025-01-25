@@ -1,3 +1,4 @@
+import ReactSpoiler from "react-spoiler";
 import quizCompleted from "../assets/quiz-complete.png";
 import QUESTIONS from "../questions";
 
@@ -47,7 +48,7 @@ export default function Summary({ userAnswers }) {
               <h3>{i + 1}</h3>
               <p className="question">{QUESTIONS[i].text}</p>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
-              {cssClass.indexOf('correct') == -1 ? <p className='user-answer correct'>{QUESTIONS[i].answers[0]}</p> : ''}
+              {cssClass.indexOf('correct') == -1 ? <ReactSpoiler><p className='user-answer correct'>{QUESTIONS[i].answers[0]}</p></ReactSpoiler> : ''}
             </li>
           );
         })}
